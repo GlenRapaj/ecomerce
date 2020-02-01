@@ -1,0 +1,239 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title> Hand made </title> 
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+
+               <!-- Compiled and minified CSS
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+ 	-->
+  
+     <!-- fonjt awsome   -->       
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+      
+      
+      <!--  jQuery
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
+        -->   
+         <!-- Compiled and minified JavaScript
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+       -->   
+      
+       <!--  <link rel="stylesheet" href="/css/materialize.css"/>     -->
+         
+           
+             <link rel="stylesheet" href="/css/materialize.css"/>
+           
+              
+        <style type="text/css">
+        
+               body {
+				    display: flex;
+				    min-height: 100vh;
+				    flex-direction: column;
+				  }
+				  
+				  
+				    main {
+					    flex: 1 0 auto;
+					  }
+					  
+				.page-footer{
+					  	
+					  	margin-top: -20px;
+					  	padding-top: 0px;
+					  } 
+					  
+					  h5{
+					  	
+					  		padding-top: 3%;
+    						padding-bottom: 2%;
+					  }
+					  
+					  #ngjyra{
+					  	padding-left: 2%;
+					  }
+
+        </style>
+        
+</head>
+<body>
+
+	<div>  <!--  Ketu do te vendoset navbar   -->
+		<div th:insert="NavigationBar :: navbar" ></div>
+			<!-- ketu mbaron navbar  -->
+	</div>
+	
+		
+
+		
+		<main>
+		
+			<div class="row" >
+			
+				<div class="col s12 m12 l5" >  <!--  konteneri i fotove -->
+				
+				 
+					
+						<img class="responsive-img" src="/images/image1.jpg" alt="" width=300 style=" padding-top: 3%; " > <!--  class="activator"  -->
+						<br/>
+						<img class="hide-on-large-only" src="/images/image2.jpg" alt="" width=100 >
+						<img class="hide-on-large-only" src="/images/image2.jpg" alt="" width=100 >
+						<img class="hide-on-large-only" src="/images/image3.jpg" alt="" width=100 >
+					
+					
+				
+				
+				
+				</div>   <!--  mbaron konteneri i fotove -->
+				
+				
+				<div class="col s12 m12 l7" >  <!--  konteneri i text -->
+				
+					<div >
+					
+						
+						
+							<h5 class="center-align" th:text=" ${productDetails.emerProdukti} " > Best hand made stufs with optimal price! </h5>
+							
+							<h5 th:text=" ${productDetails.cmimi} + ' Leke' " > Cmimi produktit </h5>  
+							<br/>
+							
+							<h5> Pershkrimi </h5>  
+							<br/>
+							
+							<p th:text=" ${productDetails.pershkrimProdukti} " >
+								Pershkrim i shkurter i produktit
+								 
+							</p>
+
+					
+						
+
+					
+					</div>
+				
+				
+				</div>   <!--  mbaron konteneri i text -->
+				
+			</div>
+				
+			<div class="row" >
+			
+						<div class="col l5" >  <!-- fotot vetem ne ekran te madh  -->
+						
+						<img class="hide-on-med-and-down" src="/images/image2.jpg" alt="" width=100 >
+						<img class="hide-on-med-and-down" src="/images/image2.jpg" alt="" width=100 >
+						<img class="hide-on-med-and-down" src="/images/image3.jpg" alt="" width=100 >
+						
+						</div>  <!-- fund i fotot vetem ne ekran te madh  -->
+				
+						<div class="col s12 m12 l4" > <!-- Te dhenat e fabrikes  -->
+						
+							<h5> Highlights </h5>
+							
+							<ul>
+							
+								<li th:text="'Masa : ' +  ${productDetails.masa}  " > Round Neck </li>
+								<li th:text="'Gjinia : ' +  ${productDetails.gjinia}  "> 3/4th Sleeve </li>
+								
+								<li th:text="'Perberja : ' +  ${productDetails.perberja}  " > Fabric: </li>
+								<li th:text="'Sezoni : ' +  ${productDetails.sezoni}  " > Polyester </li>
+								
+								<li id="ngjyra"> Pattern: </li>
+								
+								
+							</ul>
+							
+						</div>  <!-- mbarojne te dhenat e fabrikes  -->
+						
+						<div class="col s12 m12 l3" > <!-- services  -->
+						
+							<h5> Services </h5>
+							
+							  <ul class="collapsible">
+							   
+							    <li>
+							      <div class="collapsible-header"> <i class="fa fa-arrow-down"></i> 30 Day Return Policy </div>
+							      <div class="collapsible-body"> <span> Neqoftese ju nuk  e pelqeni produktin e blere 
+							      , gjithashtu nuk eperdorni apo e demtoni keni 30 dite kohe per ta kthyer </span> </div>
+							    </li>
+							    
+							    <li>
+							      <div class="collapsible-header"> <i class="fa fa-arrow-down"></i> Cash on Delivery available </div>
+							      <div class="collapsible-body"><span> Mundet qe parate ti paguani ne momentn qe merrni produktin. </span> </div>
+							    </li>
+							
+							 </ul>
+							
+						</div>  <!-- mbarojne services  -->
+					
+				
+				</div>
+			
+			
+		
+		
+		
+		</main>
+		
+
+
+	<div>  <!--  Ketu do te vendoset footer -->
+		<div th:insert="FooterNavigation :: fundi" ></div>
+			<!-- ketu mbaron footer  -->
+	</div>
+
+
+
+
+   <script src="/js/jquery-2.2.3.min.js"></script>  
+      <script src="/js/materialize.js"></script>  
+
+<script type="text/javascript" th:inline="javascript" >
+
+var ngjyratProduktit = [[${productDetails.ngjyra}]];
+	// console.log( ngjyratProduktit );
+	
+	var ngjyrat = ngjyratProduktit.split(" ");
+	// console.log( ngjyrat.length );
+	
+	var colList = "";
+	colList = colList.concat('<li> Ngjyrat : </li>');
+	colList = colList.concat('<ul>');
+	
+	for( var i = 0 ; i < ngjyrat.length ; i++ ){
+		
+		colList = colList.concat('<li>');
+		colList = colList.concat('<a');
+		colList = colList.concat(' href="#');
+		colList = colList.concat( ngjyrat[i] );
+		colList = colList.concat('">');
+		colList = colList.concat( ngjyrat[i] );
+		colList = colList.concat('</a>');
+		colList = colList.concat('</li>');
+		
+	}
+	colList = colList.concat('</ul>');
+	
+	$('#ngjyra').html( colList );
+
+$(document).ready( function(){
+
+// dropdoun 
+    $(".dropdown-trigger").dropdown();
+    
+ // side-nav triger
+  	$('.sidenav').sidenav();
+ 
+ // collapsible
+  	$('.collapsible').collapsible();
+    
+});
+    
+</script>
+
+</body>
+</html>

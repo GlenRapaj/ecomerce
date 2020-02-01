@@ -1,0 +1,567 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title> Hand made </title> 
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+        
+         <!--       
+  <link rel="stylesheet" href="../../static/css/Preetty-Footer.css" th:href="@{'css/Preetty-Footer'}"  type="text/css" media="screan"/>
+  <link rel="stylesheet" href="../../static/css/Preetty-Header.css" th:href="@{'css/reetty-Header'}"  type="text/css" media="screan"/>
+  <link rel="stylesheet" href="../../static/css/styles.css" th:href="@{'css/styles'}"  type="text/css" media="screan"/>
+        
+   
+  
+  
+ -->    
+ 
+ 	
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  
+     <!-- fonjt awsome -->       
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+         
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
+        
+         <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+           
+           
+             <link rel="stylesheet" href="/css/materialize.css"/>
+           
+              
+        <style type="text/css">
+        
+                body {
+				    display: flex;
+				    min-height: 100vh;
+				    flex-direction: column;
+				  }
+				  
+				  
+				    main {
+					    flex: 1 0 auto;
+					  }
+					  
+				.page-footer{
+					  	
+					  	margin-top: -20px;
+					  	padding-top: 0px;
+					  } 
+        
+        	.container-styling{  /* Mbase ky blloku nuk duhet   */
+        	
+        		display: flex;
+        		flex-direction: row;
+        		
+    			height: 350px;
+        	}
+        	
+        	.card{
+        		margin-left: 2%;
+        		border-radius: 7%;
+        	}
+        	
+        	.most-sell-by-category{
+        		    margin-bottom: 4%;
+        	}
+        	
+        	h5{
+        		text-align: center;
+        		padding-bottom: 3%;
+        		padding-top: 8%;
+        		font-family: initial;
+        	}
+        	
+        	.paragraf{
+        		text-align: center;
+        		padding-bottom: 7%;
+        	}
+        	
+        	h6{
+        		text-align: center;
+        		color: brown;
+    			font-family: cursive;
+        	}
+        	
+        	.categori-image{
+        		margin-bottom: 5%;
+    			margin-top: 5%;
+        	}
+        	
+        	/*  */ 
+        	.foto{
+        		padding-left: 3%;
+    			padding-right: 3%;
+    			
+    			
+        	}
+        	
+        	h3{
+        		text-align: center;
+        		padding-bottom: 3%;
+        		padding-top: 8%;
+        		font-family: initial;
+        		
+        	}
+        	
+        	h4{
+        		font-family: initial;
+        	}
+         
+        </style>
+        
+</head>
+<body>
+
+	<div>  <!--  Ketu do te vendoset navbar   -->
+			<div th:insert="NavigationBar :: navbar" ></div>
+				<!-- ketu mbaron navbar  -->
+	</div>
+
+	<div > <!-- class="container" style="bacground-color : blue ;" -->
+	
+	<main>  
+
+		
+		<div>  <!--  Ketu do te vendoset navbar dhe galeria  -->
+		<div th:insert="slideShowGaleri :: slideshow" ></div>
+		
+	
+			<!-- ketu mbaron galeria  -->
+		</div>
+		
+		<div  >   <!--  Ketu do te vendoset pjesa mbetur e dokumentit -->
+		
+			<div style=" margin-bottom: 5%; " >  <!--  kategorite  -->
+			
+				<div class="row "  > <!--  style="margin-left: 2%; margin-right: 2%;"  1 rresht  -->
+				 
+					<div class="col l3 s6 categori-image "> 
+						<a href="#" > 
+							<img class=" foto " width="240" src="images/image1.jpg">
+							<h6> Kategoria produktit </h6>
+						</a>
+					</div>
+					
+					<div class="col l3 s6 categori-image"> 
+						<a href="#" > 
+							<img class=" foto " width="240" src="images/image1.jpg">
+							<h6> Kategoria produktit </h6>
+						</a> 
+						
+					</div>
+					
+					<div class="col l3 s6 categori-image "> 
+						<a href="#" > 
+							<img class=" foto " width="240" src="images/image1.jpg">
+							<h6> Kategoria produktit </h6>
+						</a> 
+						
+					</div>
+					<div class="col l3 s6 categori-image " style=" padding-right: 2%; "> 
+						<a href="#" > 
+							<img class=" foto " width="240" src="images/image1.jpg">
+							<h6> Kategoria produktit </h6>
+						</a> 
+						
+					</div>
+					
+				</div>
+				<!--  fundi rreshtit  -->
+					<!--  Mund te shtosh sa rreshta te duash  -->
+			</div>
+			
+			<div style=" margin-bottom: 9%; " >  <!--  produktet me te kerkuara sipas kategorive  -->
+			
+				<h5> EXCLUSIVE PRODUCTS </h5>
+				
+				<p class="paragraf" style=" font-family: initial; " > A few words for buyers </p>
+			
+				<div class="row teal-text darken-4 " >  <!-- fillon tabs"  -->
+						<ul class="tabs tabs-fixed-width most-sell-by-category " >  <!--    shtojme sa te duam  -->
+							<li class="tab col s4 " id="first-tab" > <a href="#" class=" teal-text darken-4 " > 1 most selling category </a> </li>
+							<li class="tab col s4 " id="second-tab" > <a href="#" class=" teal-text darken-4 " > 2 most selling category </a>  </li>
+							<li class="tab col s4 " id="third-tab" > <a href="#" class=" teal-text darken-4 " > 3 most selling category </a> </li>
+						</ul>  <!-- mbaron tabs"  -->
+				</div>
+				
+				<section>
+					
+					<div>
+					
+						<div class="most-selling" id="first-kategori" >
+							<div class="row container-styling" >
+								
+								 <div class="card col l4 s6 z-depth-3 ">
+								    
+								    <div class="card-image waves-effect waves-block waves-light">
+								      <a href="#" > 
+								      	<img class="activator" src="images/image1.jpg">
+								      </a> 
+								    </div>
+								    
+								    <div class="card-content">
+								    <a href="#" > 
+								      <span class="card-title activator grey-text text-darken-4"> Produkti pare 
+								       <i class="fa fa-cart-plus right "></i> </span>
+								      </a> 
+								      <p> Cmimi produktit </p>
+								    </div>
+								    
+								  </div>
+								  
+								  
+								  
+								   <div class="card col l4 s6 z-depth-3 " style=" margin-left: 2%; margin-right: 2%; " >
+								   
+								    <div class="card-image waves-effect waves-block waves-light">
+								      <a href="#" > 
+								      <img class="activator" src="images/image2.jpg">
+								      </a> 
+								    </div>
+								    
+								    <div class="card-content">
+								    <a href="#" > 
+								      <span class="card-title activator grey-text text-darken-4"> Produkti dyte
+								      	<i class="fa fa-cart-plus right "></i> </span>
+								      </span>
+								     </a> 
+								      <p> Cmimi produktit </p>
+								    </div>
+								    
+								    
+								  </div>
+								  
+								  
+								   <div class="card col l4 s6 z-depth-3 ">
+								   
+								    <div class="card-image waves-effect waves-block waves-light">
+								      <a href="#" > 
+								      	<img class="activator" src="images/image2.jpg">
+								      </a> 
+								    </div>
+								    
+								    <div class="card-content">
+								      <a href="#" > 
+								      <span class="card-title activator grey-text text-darken-4"> Produkti trete 
+								         <i class="fa fa-cart-plus right "></i> </span> </span>
+								         </a> 
+								      <p> Cmimi produktit </p>
+								    </div>
+								    
+								    
+								  </div>
+								
+								
+							</div>
+								
+						</div>
+					
+						<div class="most-selling" id="second-kategori" >
+								
+							<div class="row container-styling" >
+							
+									<!--   fillon pjesa most selling -->
+								 <div class="card col l4 s6 z-depth-3 ">
+								    
+								    <div class="card-image waves-effect waves-block waves-light">
+								      <a href="#" > 
+								      <img class="activator" src="images/image3.jpg">
+								      </a> 
+								    </div>
+								    
+								    <div class="card-content">
+								      <a href="#" > 
+								      	<span class="card-title activator grey-text text-darken-4"> Produkti pare 
+								       	<i class="fa fa-cart-plus right "></i> </span>
+								       </a> 
+								      <p> Cmimi produktit </p>
+								    </div>
+								    
+								  </div>
+								  
+								  
+								  
+								   <div class="card col l4 s6 z-depth-3 " style=" margin-left: 2%; margin-right: 2%; " >
+								   
+								    <div class="card-image waves-effect waves-block waves-light">
+								      <a href="#" > 
+								      <img class="activator" src="images/image3.jpg">
+								      </a> 
+								    </div>
+								    
+								    <div class="card-content">
+								      <a href="#" > 
+								      	<span class="card-title activator grey-text text-darken-4"> Produkti dyte
+								      	<i class="fa fa-cart-plus right "></i> </span>
+								      </span>
+								      </a> 
+								      <p> Cmimi produktit </p>
+								    </div>
+								    
+								    
+								  </div>
+								  
+								  
+								   <div class="card col l4 s6 z-depth-3 ">
+								   
+								    <div class="card-image waves-effect waves-block waves-light">
+								      <a href="#" > 
+								      	<img class="activator" src="images/image3.jpg">
+								      </a> 
+								    </div>
+								    
+								    <div class="card-content">
+								    <a href="#" > 
+								      	<span class="card-title activator grey-text text-darken-4"> Produkti trete 
+								         <i class="fa fa-cart-plus right "></i> </span> 
+								         </a> 
+								      <p> Cmimi produktit </p>
+								    </div>
+								    
+								    
+								  </div>
+								
+								
+								<!--  mbaron pjesa e most selling -->
+								
+							</div>
+						</div>
+						
+						<div class="most-selling" id="third-kategori" >
+								
+							<div class="row container-styling" >
+								
+								<!--  Fillon pjesa e most selling  -->
+								
+									
+								 <div class="card col l4 s6 z-depth-3 ">
+								    
+								    <div class="card-image waves-effect waves-block waves-light">
+								      <a href="#" > 
+								      <img class="activator" src="images/image2.jpg">
+								      </a> 
+								    </div>
+								    
+								    <div class="card-content">
+								      <a href="#" > 
+								      	<span class="card-title activator grey-text text-darken-4"> Produkti pare 
+								       	<i class="fa fa-cart-plus right "></i> </span>
+								       </a> 
+								      <p> Cmimi produktit </p>
+								    </div>
+								    
+								  </div>
+								  
+								  
+								  
+								   <div class="card col l4 s6 z-depth-3 " style=" margin-left: 2%; margin-right: 2%; " >
+								   
+								    <div class="card-image waves-effect waves-block waves-light">
+								      <a href="#" > 
+								      	<img class="activator" src="images/image2.jpg">
+								      </a> 
+								    </div>
+								    
+								    <div class="card-content">
+								      <a href="#" > 
+								      	<span class="card-title activator grey-text text-darken-4"> Produkti dyte
+								      	<i class="fa fa-cart-plus right "></i> </span>
+								      </a> 
+								      <p> Cmimi produktit </p>
+								    </div>
+								    
+								    
+								  </div>
+								  
+								  
+								   <div class="card col l4 s6 z-depth-3 ">
+								   
+								    <div class="card-image waves-effect waves-block waves-light">
+								      <a href="#" > 
+								      	<img class="activator" src="images/image2.jpg">
+								      </a> 
+								    </div>
+								    
+								    <div class="card-content">
+								      <a href="#" > 
+								      	<span class="card-title activator grey-text text-darken-4"> Produkti trete 
+								         <i class="fa fa-cart-plus right "></i> </span>
+								      </a> 
+								      <p> Cmimi produktit </p>
+								    </div>
+								    
+								    
+								  </div>
+								
+								
+								<!--   mbaron pjesa e most selling  -->
+								
+								
+							</div>
+						</div>
+					
+					</div>
+				
+				
+				</section>
+			
+			</div>
+			
+			<div style=" padding-top: 15%; " > <!--  Mban te dhena me te fundit informative ne lidhje me produktet e reja qe kane ardhur apo do vine.
+			
+						apo ngjarje qe kane ndodhur apo mdom te ndodhin.   -->
+				
+				<hr/>
+				
+				
+				<h3> Recent Newus. </h3>
+				
+				<div class="row"  style=" padding-top: 5%; padding-bottom: 5%; margin-left: 5%; " >  <!-- first row with 2 block of mini articles -->
+				
+					<div class="col s12 l6" >
+					
+						<h4> First article title </h4>
+						
+						<p>
+							A short article ( A piece of all article )
+						</p>
+					
+					</div>
+					
+					<div class="col s12 l6" >
+						
+						<h4> First article title </h4>
+						
+						<p>
+							A short article ( A piece of all article )
+						</p>
+						
+					</div>
+					
+				
+				</div>	<!-- end of first row with 2 block of mini articles -->
+				
+				<div class="row" style=" padding-top: 5%; padding-bottom: 5%; margin-left: 5%; " >   <!-- second row with 2 block of mini articles -->
+				
+					
+					<div class="col s12 l6" >
+						
+						<h4> First article title </h4>
+						
+						<p>
+							A short article ( A piece of all article )
+						</p>
+						
+					</div>
+					
+					<div class="col s12 l6" >
+					
+						<h4> First article title </h4>
+						
+						<p>
+							A short article ( A piece of all article )
+						</p>
+						
+					</div>
+					
+				
+				</div>	<!-- end of second row with 2 block of mini articles -->	
+				
+				<hr/>		
+			
+			</div> <!-- mbaron contanieri i te dhenave  -->
+			
+			<div class="row" style=" padding-top: 5%; padding-bottom: 5%;     margin-left: 5%; " >
+				<div class="col s2" > <i class="fa fa-facebook-square"></i>  </div>
+				<div class="col s2" >  <i class="fa fa-credit-card"></i>  </div>
+				<div class="col s2" >  <i class="fa fa-youtube"></i>   </div>
+				<div class="col s2" >  <i class="fa fa-paypal"></i>  </div>
+				<div class="col s2" >  <i class="fa fa-cc-stripe"></i>   </div>
+				<div class="col s2" >  <i class="fa fa-instagram"></i>  </div>
+			</div>
+		
+		</div>
+	
+	</main>
+	
+	</div>
+	
+	<div>  <!--  Ketu do te vendoset footer -->
+			<div th:insert="FooterNavigation :: fundi" ></div>
+				<!-- ketu mbaron footer  -->
+	</div>
+
+   <script src="js/jquery-2.2.3.min.js"></script>  
+      <script src="js/materialize.js"></script>  
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+	
+	// dropdoun  nav-bar
+    $(".dropdown-trigger").dropdown();
+	
+    // side-nav triger nav-bar
+  	$('.sidenav').sidenav();
+	
+ // tabs 
+    $('.tabs').tabs();
+    
+ // carousel 
+    $('.carousel.carousel-slider').carousel(  {
+        fullWidth: true,
+        indicators: true
+      });
+ 
+ // carusel auto slide
+autoplay();
+ 
+ function autoplay(){
+	   
+    $('.carousel').carousel( 'next' );
+    setTimeout( autoplay, 7000 );
+  } 
+ 
+    
+	  $('.most-selling').hide();
+	  $('#first-kategori').show();
+    
+    $('#first-tab').click( function() {
+    	
+    	  // alert( " first tab clicked ." );
+    	  
+    	  $('.most-selling').hide();
+    	  $('#first-kategori').show();
+    	   
+    });
+    
+    $('#second-tab').click( function() {
+    	
+  	 // alert( " first second clicked ." );
+  	  
+  	 $('.most-selling').hide();
+  	 $('#second-kategori').show();
+  });
+    
+    $('#third-tab').click( function() {
+    	
+  	//  alert( " first third clicked ." );
+  	  
+  	 $('.most-selling').hide();
+  	 $('#third-kategori').show();
+  });
+    
+  });
+  
+
+
+  
+</script>
+
+</body>
+</html>

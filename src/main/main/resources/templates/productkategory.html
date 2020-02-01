@@ -1,0 +1,565 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title> Hand made </title> 
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+
+               <!-- Compiled and minified CSS
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+ 	-->
+  
+     <!-- fonjt awsome     -->       
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+      
+      <!-- jQuery  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
+          --> 
+          
+         <!-- Compiled and minified JavaScript
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+       -->   
+      
+       <!--  <link rel="stylesheet" href="/css/materialize.css"/>     -->
+         
+           
+             <link rel="stylesheet" href="/css/materialize.css"/>
+           
+              
+        <style type="text/css">
+        
+        	
+        	  body {
+				    display: flex;
+				    min-height: 100vh;
+				    flex-direction: column;
+				  }
+				  
+				  
+				    main {
+					    flex: 1 0 auto;
+					  }
+					  
+					  .page-footer{
+					  	
+					  /* margin-top: -20px;  */	
+					  	padding-top: 0px;
+					  } 
+        	
+        	
+        	
+        	
+        	.form-container{
+        	
+        		padding-bottom: 5%;
+    			margin-left: 5%;
+    			
+        	}
+        	
+        	h5{
+        		padding-top: 3%;
+    			padding-bottom: 4%;
+        	}
+        	
+     /*    .container-styling{     Mbase ky blloku nuk duhet  
+        	
+        		display: flex;
+        		flex-direction: row;
+        		
+        	}
+       */  	
+        	.page-link{
+        		min-width: 2rem;
+        	}
+        	
+        	
+        	
+        
+        </style>
+        
+</head>
+<body>
+
+	<div>  <!--  Ketu do te vendoset navbar   -->
+		<div th:insert="NavigationBar :: navbar" ></div>
+			<!-- ketu mbaron navbar  -->
+	</div>
+
+
+	
+	<main> 
+	
+
+
+		
+			
+		
+		
+			<div class="row"   >  <!-- style = " background-color : antiquewhite ;  "  vendose tek cards vetem  -->
+			
+				<div class="col s12 l3" style=" background-color: azure; " >  <!--  side bar -->
+				
+					<!--  <div  >  
+					
+						  <div  > style=" margin-right: 5%; " -->
+						
+							<form action="">
+							
+								<div class="form-container" >
+									<h5> Categories </h5>
+								    <p>
+								      <label>
+								        <input type="checkbox" />
+								        <span>Popular</span>
+								      </label>
+								    </p>
+									
+									 <p>
+									  <label>
+									     <input type="checkbox" />
+									     <span>Sort By Popularity</span>
+									   </label>
+									 </p>
+								
+								</div>
+								
+								<div class="form-container" >
+									
+									<h5> Price Range </h5>
+									<!--  <div id="test-slider"></div>  --> 
+									
+									    <p class="range-field">
+									      <input type="range" id="test5" min="0" max="100" />
+									    </p>
+								
+								</div>
+								
+								<div class="form-container" >
+								
+									<h5> Sizes </h5>
+								
+									<p>
+								      <label>
+								        <input type="checkbox" />
+								        <span> XS </span>
+								      </label>
+								    </p>
+								    
+								    <p>
+								      <label>
+								        <input type="checkbox" />
+								        <span> S </span>
+								      </label>
+								    </p>
+								    
+								    <p>
+								      <label>
+								        <input type="checkbox" />
+								        <span> M </span>
+								      </label>
+								    </p>
+								    
+								   	<p>
+								      <label>
+								        <input type="checkbox" />
+								        <span> L </span>
+								      </label>
+								    </p>
+								    
+								    <p>
+								      <label>
+								        <input type="checkbox" />
+								        <span> XL </span>
+								      </label>
+								    </p>
+								    
+								    <p>
+								      <label>
+								        <input type="checkbox" />
+								        <span> XXL </span>
+								      </label>
+								    </p>
+
+								    
+								</div>
+								
+								<div class="form-container" >
+									<h5> Color </h5>
+									
+									<p>
+								      <label>
+								        <input type="checkbox" />
+								        <span> Zeze </span>
+								      </label>
+								    </p>
+								    
+								    <p>
+								      <label>
+								        <input type="checkbox" />
+								        <span> Blu </span>
+								      </label>
+								    </p>
+								    
+								    <p>
+								      <label>
+								        <input type="checkbox" />
+								        <span> Kuqe </span>
+								      </label>
+								    </p>
+								    
+								    <p>
+								      <label>
+								        <input type="checkbox" />
+								        <span> Verdhe </span>
+								      </label>
+								    </p>
+								    
+								    <p>
+								      <label>
+								        <input type="checkbox" />
+								        <span> Bardhe </span>
+								      </label>
+								    </p>
+								    
+								    <p>
+								      <label>
+								        <input type="checkbox" />
+								        <span> Jeshile </span>
+								      </label>
+								    </p>
+								    
+								    <p>
+								      <label>
+								        <input type="checkbox" />
+								        <span> Lejla </span>
+								      </label>
+								    </p>
+								    
+								    <p>
+								      <label>
+								        <input type="checkbox" />
+								        <span> Gold </span>
+								      </label>
+								    </p>
+								    
+								    <p>
+								      <label>
+								        <input type="checkbox" />
+								        <span> Portokalli </span>
+								      </label>
+								    </p>
+								
+								   
+								</div>
+							
+								<input type="submit" class="btn waves-effect waves-light" style=" margin-bttom : 2%; " />
+							</form>
+						
+						<!-- </div> 
+					
+					</div>   -->
+				
+				</div>     <!-- end of side bar -->
+				
+				
+				
+				<!--   class="col s12 l10"   -->
+				
+				<div class = "row hide-on-med-and-down cardcontainer"   >   
+				
+					  
+							
+						<!-- 	
+						
+								 <div th:each=" product : ${productList}" class="card hoverable col s6 l3 " style=" width: 200px;  min-height: 270px;  margin-left: 3%; margin-top: 3%;" >  
+								    
+								    <div class="card-image waves-effect waves-block waves-light" >
+								      <a href="#" th:href="@{'/productdetails/' + ${product}.id} "  >    
+								      	<img class="activator" src="/images/image1.jpg">
+								      </a> 
+								    </div>
+								    
+								    <div class="card-content">
+								    <a href="#" > 
+								      <span class="card-title activator grey-text text-darken-4" th:text="  ${product.emerProdukti}  " > Produkti pare 
+								       <i class="fa fa-cart-plus right "></i> </span>
+								      </a> 
+								      <p th:text="  ${product.cmimi}  " > Cmimi produktit </p>  
+								    </div>
+								    
+								  </div>
+						  -->
+
+
+					
+					
+
+					
+					
+				</div>       <!--  end main product container -->
+			
+			</div>
+			
+			<div class = "row flow-text hide-on-large-only cardcontainer"   > </div>
+		
+		<div>
+		
+									<!--  pagination  -->
+						
+					  <ul class="pagination center-align"> <!--   -->
+					  
+					    <li class="  waves-effect " id="perpara" ><a href="#!">  Previus  <i class="fa fa-chevron-left blue-text text-darken-2 "></i>  </a></li>
+					    
+					    <li class=" page-link waves-effect " id="nr-nje" ><a href="#!">0</a></li>
+					    <li class=" page-link disabled active" id="nr-dy" ><a href="#!">1</a></li>
+					    <li class=" page-link waves-effect" id="nr-tre" ><a href="#!">2</a></li>
+
+					    <li class="waves-effect" id="prapa" ><a href="#!">  <i class="fa fa-chevron-right blue-text text-darken-2 "></i> Next  </a></li>
+					  
+					  </ul>
+  
+						<!--  end pagination  -->
+		
+		</div>
+		
+		
+		
+
+	
+		</main>
+	
+
+	
+
+	
+		<div>  <!--  Ketu do te vendoset footer -->
+			<div th:insert="FooterNavigation :: fundi" ></div>
+				<!-- ketu mbaron footer  -->
+		</div>
+		
+
+
+   <script src="/js/jquery-2.2.3.min.js"></script>  
+      <script src="/js/materialize.js"></script>  
+
+<script type="text/javascript" th:inline="javascript" >
+$(document).ready( function(){
+	
+	let url = document.location.href;
+	  //  http://localhost:8080/category/femra
+	  // http://localhost:8080/ kategori/femra/1
+	url = url.replace( 'http://localhost:8080/category/', '' );
+	  
+	let tempUrl = url.split("/");
+	
+	let newUrl = '/kategori/';
+	newUrl = newUrl.concat( tempUrl[0] );
+	
+
+
+
+	
+	writeDiv = ( data )=>{
+		
+		let newCardContent = ''; 
+		
+		let imgPath = '/images/image1.jpg';
+		
+		// console.log(  data.content );
+		
+	    for( let i = 0 ; i < data.content.length ; i++ ){
+	    	
+	    	newCardContent = newCardContent.concat( ' <div class="card hoverable col s6 l3 " style=" width: 200px;  min-height: 270px;  margin-left: 3%; margin-top: 3%;" >' );
+		    newCardContent = newCardContent.concat( '<div class="card-image waves-effect waves-block waves-light" >' );
+		 
+	    
+	    if( data.content[i].path.length != 0 ){
+	    	
+	    	imgPath = data.content[i].path[0];
+	    }
+	    
+	   
+	    newCardContent = newCardContent.concat( '<a href="/productdetails/'  );
+	    newCardContent = newCardContent.concat( data.content[i].id.toString()  );
+	    newCardContent = newCardContent.concat( '"  >' );
+	    
+	    newCardContent = newCardContent.concat( '<img class="activator" src="' );
+	    newCardContent = newCardContent.concat( imgPath );
+	    newCardContent = newCardContent.concat( '"> </a> </div>' );
+	    
+	    newCardContent = newCardContent.concat( '<a href="/productdetails/' );
+	    newCardContent = newCardContent.concat( data.content[i].id.toString()  );
+	    newCardContent = newCardContent.concat( '"  >' );
+	    newCardContent = newCardContent.concat( ' <span class="card-title activator grey-text text-darken-4" > '  );
+	    newCardContent = newCardContent.concat( data.content[i].emerProdukti  );
+	    newCardContent = newCardContent.concat( '  <i class="fa fa-cart-plus right "></i> </span>  </a> <p>'  );
+	    newCardContent = newCardContent.concat( data.content[i].cmimi.toString()  );
+	    newCardContent = newCardContent.concat( '</p></div></div>'  );
+    }
+    
+    $('.cardcontainer').html( newCardContent );
+		
+	}
+	
+
+	
+	function changePage( nrfaqe ){
+	
+		// console.log( newUrl );
+		
+	 fetch( newUrl,  {
+		 
+		    method: 'post',
+		    headers: {
+		      "Content-type": "application/json"
+		    },
+		    body: nrfaqe
+		  } )
+		  
+		  .then( response => response.json() )
+		  
+		    .then(  (data) => {
+		    	
+		    // console.log( 'Request succeeded with JSON response', data );
+		    
+		   // console.log( 'first ', data.first );
+		   // console.log( 'last  ', data.last );
+		    
+		    if( data.first == true ){
+		    	$('#nr-nje').hide();
+		    	$('#perpara').hide();
+		    }
+		    
+		    else{
+		    	$('#nr-nje').show();
+		    	$('#perpara').show();
+		    }
+		    
+		    
+		    if( data.last == true ){
+		    	$('#prapa').hide();
+		    	 $('#nr-tre').hide();
+		    	 
+		    	 
+		    }
+		    else{
+		    	$('#prapa').show();
+		    	 $('#nr-tre').show();
+		    }
+		    
+		    history.pushState( '', 'Hand made', 'http://localhost:8080/category/femra/' + nrfaqe );
+
+		    writeDiv( data );
+		    
+		  })
+		  
+		  .catch( function (error) {
+			    console.log('Request failed', error);
+			  });
+	 
+	 
+	 
+	  } 
+	
+	
+	
+	
+
+	
+	if(  tempUrl[1] == '' ){ 
+		
+		$('#nr-nje').hide();
+		$('#perpara').hide();
+		
+		changePage( parseInt( 0 ) );
+		// console.log( 'if' );
+		
+	}
+	else{
+		$('#nr-nje').show();
+		$('#perpara').show();
+		
+		let pnr = parseInt( tempUrl[1] );
+		
+		 $('#nr-dy').text( pnr + 1 );
+		 $('#nr-tre').text( pnr + 2 );  //
+		 $('#nr-nje').text( pnr );
+		 
+		  changePage( pnr );
+
+
+	}
+	
+	 
+	 
+	 
+	// on click event handlers 
+
+	 $('#prapa').click( function(){
+
+		 let nextPage = parseInt( $('#nr-tre').text() );
+		 changePage( nextPage - 1 );
+		
+		 $('#nr-dy').text( nextPage );
+		 $('#nr-tre').text( nextPage + 1 );  // 
+		 $('#nr-nje').text( nextPage - 1 );
+		 
+	 } );
+	 
+	 
+	 
+	 $('#perpara').click( function(){
+		 
+		 let nextPage = parseInt( $('#nr-nje').text() );
+			 changePage( nextPage - 1 );
+			
+		 $('#nr-dy').text( nextPage );
+		 $('#nr-tre').text( nextPage + 1 );
+		 $('#nr-nje').text( nextPage - 1 );
+		 
+	 });
+	 
+	 
+	 
+	 $('#nr-nje').click( function(){
+		 
+		 let nextPage = parseInt( $('#nr-nje').text() );
+			 changePage( nextPage - 1 );
+			
+		 $('#nr-dy').text( nextPage );
+		 $('#nr-tre').text( nextPage + 1 );
+		 $('#nr-nje').text( nextPage - 1 );
+		 
+	 });
+	 
+	 
+	 
+	 
+	 $('#nr-tre').click( function(){
+		 
+		 let nextPage = parseInt( $('#nr-tre').text() );
+			 changePage( nextPage - 1 );
+			
+			 $('#nr-dy').text( nextPage );
+			 $('#nr-tre').text( nextPage + 1 );  // 
+			 $('#nr-nje').text( nextPage - 1 );
+			 
+	 });
+	
+	
+	 
+
+// dropdoun 
+    $(".dropdown-trigger").dropdown();
+    
+ // side-nav triger
+  	$('.sidenav').sidenav();
+    
+});
+    
+</script>
+    
+
+</body>
+</html>
