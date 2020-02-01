@@ -10,6 +10,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 @Table( name = "paths" )
 public class Paths {
@@ -27,9 +30,10 @@ public class Paths {
 	private String alt;
 	
 	
-	// @Column( name = "Product_id" )
-	@ManyToOne  ( fetch = FetchType.LAZY , optional = false  )
-	@JoinColumn( name = "product_id", nullable = false  ) //  
+  // @JsonIdentityInfo
+	@ManyToOne  ()
+	@JoinColumn( name = "product_id"  ) //  , nullable = false
+	 @JsonBackReference // e shtuar 
 	private  Produkte productId ;
 
 	public Paths(int id, String path, Produkte productId, String alt) {

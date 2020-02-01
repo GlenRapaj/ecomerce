@@ -19,8 +19,9 @@ public interface ProdukteRepo extends JpaRepository< Produkte , Integer >{
 	List<Produkte> getPeaceOfProductsByCategoryAsList(   PageRequest firstPage );
 	
 // 
-	@Query( nativeQuery = true, value = "select sum(b.pagesa), p.emer_produkti, p.kategoria_produktit from produkte p inner join bleres b on b.kod_produkti = p.id  where p.kategoria_produktit = ?1 group by p.emer_produkti order by b.pagesa;" )
-	List<MostSellingProductCategory> getMostSellingProductForCategory( PageRequest firstPage , String kategoriaProduktit );
+	
+	@Query( nativeQuery = true, value = "select sum(b.pagesa) , p.emer_produkti  , p.kategoria_produktit  from produkte p inner join bleres b on b.kod_produkti = p.id  where p.kategoria_produktit = ?1 group by p.emer_produkti order by b.pagesa;" )
+	List getMostSellingProductForCategory(  String kategoriaProduktit ); // PageRequest firstPage ,  List<MostSellingProductCategory>
 	
 	@Query("select kategoriaProduktit from Produkte ")
 	List<String> getProductCategory();

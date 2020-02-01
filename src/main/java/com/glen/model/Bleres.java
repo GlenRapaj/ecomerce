@@ -3,18 +3,29 @@ package com.glen.model;
 
 
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinColumns;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table( name = "bleres" )
+
 public class Bleres {
 
 
@@ -42,8 +53,8 @@ public class Bleres {
  	@Column( name = "nr_llogarie" )
 	 private float nrLlogarie;
 	
-	@Column( name = "bonus_code", columnDefinition = "int", nullable = true )
-	private int bonusCode;
+	// @Column( name = "bonus_code", columnDefinition = "int", nullable = true )
+	// private int bonusCode;
 	
 	@Column( name = "pagesa" )
 	private double pagesa;  // si vlere numerike
@@ -54,8 +65,8 @@ public class Bleres {
 	@Column( name = "kodi_sigurise", columnDefinition = "int" )
 	private int cvv;
 	
-	@Column( name = "kod_produkti", nullable = false, columnDefinition = "int" )
-	private int kodProdukti;  // kod produkti te blere
+	// @Column( name = "kod_produkti", nullable = false, columnDefinition = "int" )
+	// private int kodProdukti;  // kod produkti te blere
 	
 	 @Column( name = "full_name", nullable = false )
 	 private String fullName;  // emer i plote i bleresit
@@ -68,10 +79,31 @@ public class Bleres {
 	
 	@Column( name = "dorezuar" )
 	private boolean dorezuar;
+	
+	@ManyToMany( fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
+	@JoinTable( name = "bleres_produkte",
+			joinColumns = {
+					@JoinColumn( name = "bleres_id", referencedColumnName = "id", nullable = false ),
+			},
+			inverseJoinColumns = { 
+					@JoinColumn( referencedColumnName = "id", name = "produkt_id", nullable = false )
+			})
+	 @JsonIgnoreProperties("bleresit")
+	private List<Produkte> produktet ;
+	
+	
 	/*    */
-	public Bleres(int id, String email, int tel, String adresa, String qyteti, String shteti, float nrLlogarie,
-			int bonusCode, double pagesa, String valuta, int cvv, int kodProdukti, String fullName,
-			Date dataBlerjesProduktit, Date maxDatDorezimi, boolean dorezuar) {
+	
+
+	public Bleres() {
+		super();
+	}
+	
+	
+
+public Bleres(int id, String email, int tel, String adresa, String qyteti, String shteti, float nrLlogarie,
+			double pagesa, String valuta, int cvv, String fullName, Date dataBlerjesProduktit, Date maxDatDorezimi,
+			boolean dorezuar ) {  // , List<Produkte> produktet
 		super();
 		this.id = id;
 		this.email = email;
@@ -80,33 +112,37 @@ public class Bleres {
 		this.qyteti = qyteti;
 		this.shteti = shteti;
 		this.nrLlogarie = nrLlogarie;
-		this.bonusCode = bonusCode;
 		this.pagesa = pagesa;
 		this.valuta = valuta;
 		this.cvv = cvv;
-		this.kodProdukti = kodProdukti;
 		this.fullName = fullName;
 		this.dataBlerjesProduktit = dataBlerjesProduktit;
 		this.maxDatDorezimi = maxDatDorezimi;
 		this.dorezuar = dorezuar;
+		// this.produktet = produktet;
 	}
 
-	public Bleres() {
-		super();
-	}
+
+
 /*   */
-	@Override
-	public String toString() {
-		return "Bleres [id=" + id + ", email=" + email + ", tel=" + tel + ", adresa=" + adresa + ", qyteti=" + qyteti
-				+ ", shteti=" + shteti + ", nrLlogarie=" + nrLlogarie + ", bonusCode=" + bonusCode + ", pagesa="
-				+ pagesa + ", valuta=" + valuta + ", cvv=" + cvv + ", kodProdukti=" + kodProdukti + ", fullName="
-				+ fullName + ", dataBlerjesProduktit=" + dataBlerjesProduktit + ", maxDatDorezimi=" + maxDatDorezimi
-				+ ", dorezuar=" + dorezuar + "]";
-	}
+
 
 	public int getId() {
 		return id;
 	}
+
+	public List<Produkte> getProduktet() {
+		return produktet;
+	}
+
+
+	public void setProduktet(List<Produkte> produktet) {
+		this.produktet = produktet;
+	}
+
+
+
+
 
 	public void setId(int id) {
 		this.id = id;
@@ -160,13 +196,6 @@ public class Bleres {
 		this.nrLlogarie = nrLlogarie;
 	}
 
-	public int getBonusCode() {
-		return bonusCode;
-	}
-
-	public void setBonusCode(int bonusCode) {
-		this.bonusCode = bonusCode;
-	}
 
 	public double getPagesa() {
 		return pagesa;
@@ -192,13 +221,7 @@ public class Bleres {
 		this.cvv = cvv;
 	}
 
-	public int getKodProdukti() {
-		return kodProdukti;
-	}
 
-	public void setKodProdukti(int kodProdukti) {
-		this.kodProdukti = kodProdukti;
-	}
 /*   */
 	public String getFullName() {
 		return fullName;
@@ -231,10 +254,21 @@ public class Bleres {
 	public void setDorezuar(boolean dorezuar) {
 		this.dorezuar = dorezuar;
 	}
+
+
+	@Override
+	public String toString() {
+		return "Bleres [id=" + id + ", email=" + email + ", tel=" + tel + ", adresa=" + adresa + ", qyteti=" + qyteti
+				+ ", shteti=" + shteti + ", nrLlogarie=" + nrLlogarie + ", pagesa=" + pagesa + ", valuta=" + valuta
+				+ ", cvv=" + cvv + ", fullName=" + fullName + ", dataBlerjesProduktit=" + dataBlerjesProduktit
+				+ ", maxDatDorezimi=" + maxDatDorezimi + ", dorezuar=" + dorezuar + ", produktet=" + produktet + "]";
+	}
 	
 	
 	
-	
+	public void addAitem( Produkte produkte ) {
+		produktet.add( produkte );
+	} 
 	 
 
 }

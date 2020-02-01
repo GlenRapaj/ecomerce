@@ -10,17 +10,26 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 @Table( name = "produkte" )
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) 
+// @JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "Bleres"})
 public class Produkte {
 
 	// shto   dhe cmimin
 	   
 	@Id
 	@GeneratedValue( strategy = GenerationType.AUTO )
+	@Column( name = "id" )
 	private int id;
 	
 	@Column( name = "masa", nullable = false )
@@ -55,7 +64,10 @@ public class Produkte {
 	
 	private double kostoProduktit ;
 	
-	private int sasiablere ;
+	private int sasiablere ; // sasia qe eshte gjendje
+	
+	@Column( name = "sasia_Shitur")
+	private int sasiashitur ;
 	
 	@Column( name = "emer_produkti", nullable = false )
 	private String emerProdukti ;
@@ -63,27 +75,23 @@ public class Produkte {
 	@Column( name = "cmimi" )
 	private double cmimi;
 	
-	// e shtuar
-	@OneToMany( mappedBy = "productId", fetch = FetchType.LAZY, cascade = CascadeType.ALL )
+	 
+	@OneToMany( mappedBy = "productId", cascade = { CascadeType.ALL } )
+	@JsonManagedReference // e shtuar
 	private List<Paths> path ;
 	
+	@ManyToMany( mappedBy = "produktet" , fetch = FetchType.LAZY )
+	 @JsonIgnoreProperties("produktet")
+	private List<Bleres> bleresit ;
 	
-
-
-
-
-
-
-
-
 
 
 
 
 	public Produkte(int id, String masa, int sasiaDisponueshme, String gjinia, String perberja,
 			String pershkrimProdukti, String sezoni, int bonusCode, String kategoriaProduktit, String ngjyra,
-			String tipiProduktit, double kostoProduktit, int sasiablere, String emerProdukti, double cmimi,
-			List<Paths> path) {
+			String tipiProduktit, double kostoProduktit, int sasiablere, int sasiashitur, String emerProdukti,
+			double cmimi, List<Paths> path ) {  // , List<Bleres> bleresit
 		super();
 		this.id = id;
 		this.masa = masa;
@@ -98,9 +106,11 @@ public class Produkte {
 		this.tipiProduktit = tipiProduktit;
 		this.kostoProduktit = kostoProduktit;
 		this.sasiablere = sasiablere;
+		this.sasiashitur = sasiashitur;
 		this.emerProdukti = emerProdukti;
 		this.cmimi = cmimi;
 		this.path = path;
+		// this.bleresit = bleresit;
 	}
 
 
@@ -254,14 +264,60 @@ public class Produkte {
 
 
 
+	public int getSasiashitur() {
+		return sasiashitur;
+	}
+
+
+
+
+
+	public void setSasiashitur(int sasiashitur) {
+		this.sasiashitur = sasiashitur;
+	}
+
+
+
+
+
+	public List<Bleres> getBleresit() {
+		return bleresit;
+	}
+
+
+
+
+
+	public void setBleresit( List<Bleres> bleresit ) {
+		this.bleresit = bleresit;
+	}
+	
+	/* 
+	public void addBleresit( Bleres bleres ) {
+		bleresit.add( bleres );
+		bleres.getProduktet().add(this);
+		
+	}
+   */
+
+
+
+
 	@Override
 	public String toString() {
 		return "Produkte [id=" + id + ", masa=" + masa + ", sasiaDisponueshme=" + sasiaDisponueshme + ", gjinia="
 				+ gjinia + ", perberja=" + perberja + ", pershkrimProdukti=" + pershkrimProdukti + ", sezoni=" + sezoni
 				+ ", bonusCode=" + bonusCode + ", kategoriaProduktit=" + kategoriaProduktit + ", ngjyra=" + ngjyra
 				+ ", tipiProduktit=" + tipiProduktit + ", kostoProduktit=" + kostoProduktit + ", sasiablere="
-				+ sasiablere + ", emerProdukti=" + emerProdukti + ", cmimi=" + cmimi + ", path=" + path + "]";
+				+ sasiablere + ", sasiashitur=" + sasiashitur + ", emerProdukti=" + emerProdukti + ", cmimi=" + cmimi
+				+ ", path=" + path + ", bleresit=" + bleresit + "]";
 	}
+
+
+
+
+
+
 
 
 

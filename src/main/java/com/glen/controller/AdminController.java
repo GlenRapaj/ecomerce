@@ -15,6 +15,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,7 +28,7 @@ import com.glen.model.BonusSellers;
 import com.glen.model.FullPayment;
 import com.glen.model.Produkte;
 import com.glen.model.RezultatBilanci;
-import com.glen.model.ShitjeKategori;
+import com.glen.model.ShitjeKategoriDTO;
 import com.glen.repository.BilanceRepo;
 import com.glen.repository.BleresRepo;
 import com.glen.repository.ProdukteRepo;
@@ -206,14 +207,14 @@ public class AdminController {
 		 Date startingd = Date.from( startingDate.atStartOfDay( ZoneId.systemDefault() ).toInstant() );
 		 
 		 List<BonusSellers> listOfBonusSellsBySellers = new ArrayList<>();
-		 listOfBonusSellsBySellers = bleresRepo.getSellsGroupedByBonusSellers( startingd , endD  );
+		// listOfBonusSellsBySellers = bleresRepo.getSellsGroupedByBonusSellers( startingd , endD  );
 		
 		 return listOfBonusSellsBySellers ;
 	}
 	
 	
-	@GetMapping("/sellingcategory")
-	public List<ShitjeKategori> getSellsByCategory() {
+	@GetMapping( path = "/sellingcategory", produces = MediaType.APPLICATION_JSON_VALUE )
+	public List<ShitjeKategoriDTO> getSellsByCategory() {
 		
 		/*
 		 
@@ -232,7 +233,7 @@ public class AdminController {
 		 Date startingd = Date.from( startingDate.atStartOfDay( ZoneId.systemDefault() ).toInstant() );
 		 
 		
-		List<ShitjeKategori> sellingForCategory = new ArrayList<>();
+		List<ShitjeKategoriDTO> sellingForCategory = new ArrayList<>();
 		sellingForCategory = bleresRepo.getSellsCategory( startingd, endD );
 		
 		return sellingForCategory ;

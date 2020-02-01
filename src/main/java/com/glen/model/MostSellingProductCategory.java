@@ -2,16 +2,16 @@ package com.glen.model;
 
 public class MostSellingProductCategory {
 	
-	 private String kategoriaProduktit ;
-		private String emerProdukti ;
-		private double cmimi;
+	 private String kategoria_produktit ;
+		private String emer_produkti ;
+		private double pagesa;
 		
 		
 		public MostSellingProductCategory(String kategoriaProduktit, String emerProdukti, double cmimi) {
 			super();
-			this.kategoriaProduktit = kategoriaProduktit;
-			this.emerProdukti = emerProdukti;
-			this.cmimi = cmimi;
+			this.kategoria_produktit = kategoriaProduktit;
+			this.emer_produkti = emerProdukti;
+			this.pagesa = cmimi;
 		}
 		
 		public MostSellingProductCategory() {
@@ -19,28 +19,28 @@ public class MostSellingProductCategory {
 		}
 		
 		public String getKategoriaProduktit() {
-			return kategoriaProduktit;
+			return kategoria_produktit;
 		}
 		public void setKategoriaProduktit(String kategoriaProduktit) {
-			this.kategoriaProduktit = kategoriaProduktit;
+			this.kategoria_produktit = kategoriaProduktit;
 		}
 		public String getEmerProdukti() {
-			return emerProdukti;
+			return emer_produkti;
 		}
 		public void setEmerProdukti(String emerProdukti) {
-			this.emerProdukti = emerProdukti;
+			this.emer_produkti = emerProdukti;
 		}
 		public double getCmimi() {
-			return cmimi;
+			return pagesa;
 		}
 		public void setCmimi(double cmimi) {
-			this.cmimi = cmimi;
+			this.pagesa = cmimi;
 		}
 		
 		@Override
 		public String toString() {
-			return "MostSellingProductCategory [kategoriaProduktit=" + kategoriaProduktit + ", emerProdukti="
-					+ emerProdukti + ", cmimi=" + cmimi + "]";
+			return "MostSellingProductCategory [kategoriaProduktit=" + kategoria_produktit + ", emerProdukti="
+					+ emer_produkti + ", cmimi=" + pagesa + "]";
 		}
 		
 		
